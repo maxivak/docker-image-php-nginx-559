@@ -21,6 +21,23 @@ cd docker-image-php-nginx
 docker build -t my-php-nginx .
 ```
 
+# Run container
+
+* copy your PHP site to folder on host machine `/path/to/site/`
+
+* run container
+```
+docker run -d --name my-php -v /path/to/site/:/var/www/html -p 8080:80 my-php-nginx /sbin/my_init
+```
+
+# Services
+
+* nginx
+* nginx is running as root
+
+* php-fpm
+* php-fpm is running as root
+
 
 
 # Settings

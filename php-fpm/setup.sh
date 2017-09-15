@@ -16,5 +16,8 @@ php5enmod mcrypt
 # Ensure the mode is correct on the unix socket
 sed -i 's#;listen.mode = 0660#listen.mode = 0666#g' /etc/php5/fpm/pool.d/www.conf
 
+sed -i 's#user = www-data#user = root#g' /etc/php5/fpm/pool.d/www.conf
+sed -i 's#group = www-data#group = root#g' /etc/php5/fpm/pool.d/www.conf
+
 # Disable xdebug by default
 php5dismod xdebug

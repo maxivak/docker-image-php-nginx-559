@@ -1,5 +1,8 @@
 #!/bin/sh
 echo "daemon off;" >> /etc/nginx/nginx.conf
+
+sed -i 's#user www-data#user root#g' /etc/nginx/nginx.conf
+
 cp -a /build/nginx/site-default /etc/nginx/sites-available/default
 
 # Configure nginx (docroot and front controller) on startup
