@@ -11,6 +11,8 @@ chmod +x /etc/my_init.d/00_configure_php.sh
 mkdir /etc/service/php-fpm
 cp -a /build/php-fpm/runit.sh /etc/service/php-fpm/run
 chmod +x /etc/service/php-fpm/run
+
+# modules
 php5enmod mcrypt
 
 # Ensure the mode is correct on the unix socket
